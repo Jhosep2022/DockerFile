@@ -20,4 +20,5 @@ EXPOSE 9001
 RUN mkdir -p /data && chmod -R 777 /data
 
 # Comando de inicio del contenedor
-CMD ["minio", "server", "/data", "--console-address", ":9001"]
+CMD ["minio", "server", "/data", "--console-address", ":9001", "--address", "0.0.0.0:9000"]
+
