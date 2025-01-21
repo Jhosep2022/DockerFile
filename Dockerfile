@@ -16,11 +16,8 @@ ENV MINIO_PROMETHEUS_AUTH_TYPE=public
 EXPOSE 9000
 EXPOSE 9001
 
-# Crear un directorio de datos predeterminado
+# Crear un directorio de datos predeterminado sin usar VOLUME
 RUN mkdir -p /data && chmod -R 777 /data
-
-# Configuración para asegurar los permisos adecuados
-VOLUME /data
 
 # Comando de inicio del contenedor
 CMD ["minio", "server", "/data", "--console-address", ":9001"]
